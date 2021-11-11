@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "kahoot.js-api": "^2.4.0",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.6"
   },
   "devDependencies": {},
   "scripts": {
