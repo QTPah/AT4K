@@ -5,9 +5,9 @@
   "main": "index.js",
   "dependencies": {
     "kahoot.js-api": "^2.4.0",
-    "node-fetch": "^2.6.6"
+    "node-fetch": "^2.6.6",
+    "tiny-timer": "^1.6.0"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
