@@ -2,12 +2,16 @@ const Kahoot = require("kahoot.js-api");
 const fetch = require('node-fetch');
 const { CLI, Command, CC } = require('./nodecli');
 const keypress = require('keypress');
+const { stdin, stdout } = require("process");
+const events = require('events');
 keypress(process.stdin);
 
 let searchTickInterval;
 let targetPin;
 let activeBots = [];
-const maxThreads = 10;
+let maxThreads = 10;
+let lastPin;
+let lastPins = [];
 let threads = 0;
 let tested = 0;
 
@@ -20,6 +24,8 @@ console.log(`\u001b[31;1m
      /_/    \\_\\|_|      |_|  |_|\\_\\\u001b[0m
     Advanced   Tool     For  Kahoot                 By QTPah
 
+        ${CC.BG_WHITE}${CC.BLACK}You using this tool does ${CC.B_RED}NOT${CC.RESET}${CC.BG_WHITE}${CC.BLACK} make you a real hacker! ;)${CC.RESET}
+
     ${CC.BG_RED}DISCLAIMER: We assume no liability for use of this Tool.${CC.RESET}
 
     ${CC.B_MAGENTA}Discord${CC.RESET}: @QTPah#0999
@@ -28,13 +34,18 @@ console.log(`\u001b[31;1m
 let cli = new CLI(`${CC.RESET}${CC.B_WHITE}[${CC.B_MAGENTA}A4TK${CC.B_WHITE}]${CC.RESET} > `);
 
 cli.addCommand(new Command('scan', (args, p) => {
-    console.log('Search started. Press "e" to exit.');
+    if(args[0]) maxThreads = parseInt(args[0], 10);
+    console.log(`${CC.GREEN}Search started with ${maxThreads} threads. Press "e" to exit${CC.RESET}`);
     searchTickInterval = setInterval(tick, 1);
     let onKey = (ch, key) => {
+        if(!key.hasOwnProperty("name"))return;
         if(key.name == "e") {
             clearInterval(searchTickInterval);
             onKey = () => {};
             p();
+        } else if(key.name == "c") {
+            if(lastPin) require('child_process').spawn('clip').stdin.end(lastPin);
+            process.stdin.once('keypress', onKey);
         } else {
             process.stdin.once('keypress', onKey);
         }
@@ -45,7 +56,7 @@ cli.addCommand(new Command('scan', (args, p) => {
 cli.addCommand(new Command('help', (args, p) => {
     console.log(`   Commands:
     help : See this message.
-    scan : Scan for random Kahoot pins.
+    scan [threads] : Scan for random Kahoot pins.
     spawn [NAME] [PIN] : Spawn a Bot into a Kahoot game. If you locked in a pin, you don't need to fill in the second argument and it will automatically use the locked pin.¨
     getbots : List all online bots you spawned.
     kill : Remove a Bot from a Kahoot game.
@@ -129,8 +140,10 @@ const spawnBot = (code) => {
     client.on("Joined", () => {
         process.stdout.clearLine();
         process.stdout.cursorTo(0);
-      console.log(`${code} (\u001b[32;1mVALID\u001b[0m)`);
-      client.leave();
+        lastPin = code;
+        lastPins.push(code);
+        console.log(`${code} (\u001b[32;1mVALID\u001b[0m)`);
+        client.leave();
     });
   }
 
@@ -139,8 +152,9 @@ const tick = () => {
     let pin = genRandomPin();
     threads++;
     fetch('https://kahoot.it/reserve/session/'+pin).then(res => {
-        tested++;threads--;
+        threads--;
         if(res.status == 200) {
+            tested++;
             process.stdout.clearLine();
             process.stdout.cursorTo(0);
             process.stdout.write(`${pin} (\u001b[33;1mSEARCHING...\u001b[0m) [${tested}]`);
