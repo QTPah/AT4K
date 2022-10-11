@@ -8,7 +8,7 @@
     "kahoot.js-api": "^2.4.0",
     "keypress": "^0.2.1",
     "node-fetch": "^2.6.6",
-    "pkg": "^5.4.1",
+    "pkg": "^5.5.2",
     "tiny-timer": "^1.6.0"
   },
   "scripts": {
