@@ -1,0 +1,11 @@
+/Users/qtpah/Documents/GitHub/Kahax/rust/target/debug/deps/futures_core-6bdd2c029df66f28.rmeta: /Users/qtpah/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/lib.rs /Users/qtpah/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/future.rs /Users/qtpah/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/stream.rs /Users/qtpah/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/mod.rs /Users/qtpah/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/poll.rs /Users/qtpah/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/__internal/mod.rs /Users/qtpah/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/__internal/atomic_waker.rs
+
+/Users/qtpah/Documents/GitHub/Kahax/rust/target/debug/deps/futures_core-6bdd2c029df66f28.d: /Users/qtpah/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/lib.rs /Users/qtpah/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/future.rs /Users/qtpah/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/stream.rs /Users/qtpah/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/mod.rs /Users/qtpah/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/poll.rs /Users/qtpah/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/__internal/mod.rs /Users/qtpah/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/__internal/atomic_waker.rs
+
+/Users/qtpah/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/lib.rs:
+/Users/qtpah/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/future.rs:
+/Users/qtpah/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/stream.rs:
+/Users/qtpah/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/mod.rs:
+/Users/qtpah/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/poll.rs:
+/Users/qtpah/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/__internal/mod.rs:
+/Users/qtpah/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/__internal/atomic_waker.rs:
