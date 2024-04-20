@@ -12,7 +12,6 @@ class Timer {
                 if(this.ms == 1000) this.ms = 0, this.sec += 1;
                 if(this.sec == 60) this.sec = 0, this.min += 1;
                 if(this.min == 60) this.min = 0, this.hr += 1;
-                //console.log(`${this.hr}:${this.min}:${this.sec}:${this.ms}`);
             }, 1);
         }
 
